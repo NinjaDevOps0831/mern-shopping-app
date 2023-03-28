@@ -1,0 +1,69 @@
+.footer {
+    background-color: white;
+    padding         : 4rem 5rem 2rem;
+    text-align      : center;
+
+    .footer-content{
+        display        : flex;
+        flex-direction : row;
+        flex-wrap      : wrap;
+        justify-content: center;
+        margin-bottom  : 4rem;
+
+        > * {
+            width     : 200px;
+            text-align: left;
+
+            h5 { 
+                font-weight: bold;
+            }
+
+            ul {
+                list-style: none;
+                margin    : 0;
+                padding   : 0;
+
+                li {
+                    list-style-type: none;
+
+                    &:hover{
+                        cursor: pointer;
+                        color: lighten($color: #000000, $amount: 50);
+                    }
+                }
+            }
+        }
+
+        .item-email {
+            width: 350px;
+        }
+    }
+
+    .email-subscribe {
+        .email-input {
+            border-bottom  : 1px solid darkgray;
+            width          : 250px;
+            padding        : 0.5rem 0;
+            display        : flex;
+            flex-direction : row;
+            justify-content: space-between;
+            align-items    : center;
+
+            input {
+                border: none;
+
+                &:focus {
+                    outline: none;
+                }
+            }
+        }
+
+        .footer-icons {
+            margin-top     : 2rem;
+            font-size      : 1.2rem;
+            width          : 100px;
+            display        : flex;
+            justify-content: space-between;
+        }
+    }
+}

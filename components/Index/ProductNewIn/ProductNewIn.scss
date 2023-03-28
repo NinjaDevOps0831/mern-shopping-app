@@ -1,0 +1,90 @@
+.product-new-in {
+    margin: 3rem 2rem 5rem;
+
+    .preview-title{
+        font-weight: bold;
+    }
+
+    .preview-item-0 { grid-area: item0; }
+    .preview-item-1 { grid-area: item1; }
+    .preview-item-2 { grid-area: item2; }
+    .preview-item-3 { grid-area: item3; }
+    .preview-item-4 { grid-area: item4; }
+
+    .preview-container {
+        display              : grid;
+        grid-gap             : 10px;
+        grid-template-columns: 30% 35% 35%;
+        grid-template-rows   : 350px 350px;
+        grid-template-areas  : 
+            "item0 item1 item2"
+            "item0 item3 item4";
+    }
+
+    .product-preview {
+        height    : 100%;
+        width     : 100%;
+        text-align: center;
+        position  : relative;
+
+        .preview-img{
+            width     : 100%;
+            height    : 100%;
+            object-fit: cover;
+            z-index   : 1;
+            position  : absolute;
+            top       : 0;
+            left      : 0;
+        }
+
+        .preview-name {
+            margin          : 0;
+            position        : absolute;
+            top             : 1rem;
+            left            : 1rem;
+            z-index: 3;
+        }
+
+        .preview-btn {
+            background-color: rgba($color: #000000, $alpha: 0.9);
+            color           : white;
+            padding         : 1rem 2.5rem;
+            border          : none;
+            visibility      : hidden;
+            z-index         : 2;
+            border-radius   : 3px;
+            margin          : 0;
+            position        : absolute;
+            top             : 50%;
+            left            : 50%;
+            -ms-transform   : translate(-50%, -50%);
+            transform       : translate(-50%, -50%);
+
+            &:hover {
+                background-color: lighten($color: #000000, $amount: 20);
+            }
+        }
+
+        &:hover {
+            .preview-img {
+                opacity: 0.5;
+            }
+
+            .preview-btn {
+                visibility         : visible;
+                animation          : 0.3s fadeIn;
+                animation-fill-mode: forwards;
+            }
+        }
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      visibility: visible;
+      opacity   : 1;
+    }
+}
